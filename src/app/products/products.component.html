@@ -1,0 +1,10 @@
+
+<div class="  flex  gap-3 justify-center" *ngIf="display === 'carousel'">
+    <app-card *ngFor="let product of products" [product]="product"></app-card>
+</div>
+
+<div class="grid grid-cols-3" *ngIf="display === 'grid'">
+    test2
+    <app-card *ngFor="let product of products"></app-card>
+</div>
+

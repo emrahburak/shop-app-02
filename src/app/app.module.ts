@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductsComponent } from './products/products.component';
 import { CardComponent } from './card/card.component';
+import { SocialComponent } from './social/social.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CardComponent } from './card/card.component';
     FooterComponent,
     HomeComponent,
     ProductsComponent,
-    CardComponent
+    CardComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,

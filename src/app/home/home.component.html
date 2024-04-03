@@ -1,4 +1,5 @@
-<main class=" bg-cover bg-center bg-no-repeat h-full  flex align-middle justify-center" style="background-image: url('../../assets/images/banner-1.jpg');">
+<main class=" bg-cover bg-center bg-no-repeat h-full  flex align-middle justify-center mb-20"
+  style="background-image: url('../../assets/images/banner-1.jpg');">
   <!-- <video class="absolute -z-10 w-full  aspect-video" autoplay loop muted>
     <source src="../../assets/home-banner.mp4" type="video/mp4" />
   </video> -->
@@ -6,6 +7,34 @@
     class="mx-auto my-auto text-white font-sans font-semibold uppercase text-2xl p-3 border-2 border-white transition-all duration-200 ease-in-out rounded-sm hover:bg-white hover:text-black">Shop
     Now</button>
 </main>
-<section >
+<section class="mb-20">
   <app-products display="carousel"></app-products>
+</section>
+
+<section
+  class="relative   h-fit after:absolute after:top-0 after:left-0 after:w-full after:h-full  after:bg-gradient-to-l after:from-gray-950 after:z-10">
+  <img class=" h-96 opacity-75 " src="../../assets/images/banner-02.jpg " style="width: 90%;" alt="">
+  <span class="absolute top-1/3 right-52 z-20 text-white uppercase font-sans font-bold text-6xl">Performance <br>
+    Apparel</span>
+</section>
+
+<section class="mb-20">
+  <app-products display="grid"></app-products>
+</section>
+
+<section
+  class="mb-20 relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-r before:from-gray-900 before:z-10 after:absolute after:top-0 after:right-0 after:w-full after:h-full after:bg-gradient-to-l after:from-gray-900 after:z-20 ">
+  <div class="bg-black ">
+    <img class="h-96 w-3/4 aspect-auto mx-auto opacity-90 object-center " src="../../assets/images/banner-05.jpg" alt="">
+  </div>
+ <span class="absolute top-1/4  right-1/4 z-20 text-white uppercase font-sans font-extrabold text-7xl">The Pro Edition</span>
+
+</section>
+
+<section class="mb-20">
+  <app-products display="carousel"></app-products>
+</section>
+
+<section >
+  <app-social></app-social>
 </section>

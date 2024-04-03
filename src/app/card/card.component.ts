@@ -1,5 +1,6 @@
 import { Component,Input } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '../model/product';
+import {Social} from '../model/social';
 
 @Component({
   selector: 'app-card',
@@ -8,5 +9,6 @@ import { Product } from '../product';
 })
 export class CardComponent {
   @Input() product: Product|undefined
+  @Input() post : Social | undefined
 
 }

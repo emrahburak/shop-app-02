@@ -1,8 +1,19 @@
+<a href="" *ngIf="product" class="flex flex-col flex-nowrap  gap-6 w-80 mt-20 overflow-hidden  pb-10">
 
-<div class="flex flex-col gap-2">
-    <img class="w-60 h-48" src="{{product?.image}}" alt="">
-    <p>{{product?.name}}| {{product?.color}}</p>
-    <p>{{product?.name}}</p>
-    <span>{{product?.price}}</span>
+  <img class="w-56 h-48 transition-all duration-200 ease-in-out  hover:scale-105 mx-auto" src="{{product.image}}"
+    alt="{{product.name}}">
 
-</div>
+  <div class="w-full mx-auto">
+    <p class="mb-3">{{product.name}}| {{product.color}}</p>
+    <span>{{product.price |currency}}</span>
+  </div>
+</a>
+
+<a href="" *ngIf="post"
+  class=" relative w-96 after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0 after:h-full hover:after:bg-gray-900 hover:after:opacity-60 after:z-20 after:transition-all after:duration-200 after:ease-in-out  py-4">
+  <img class="w-full h-full   -z-10" src="{{post.image}}" alt="{{post.title}}">
+  <div class="absolute top-0 left-0 bottom-0 right-0  opacity-0 z-30 hover:opacity-100  flex flex-col justify-between   ">
+    <span class=" text-white text-wrap text-center  ">{{post.title}}</span>
+    <span class=" text-white text-wrap text-center">{{post.date | date}}</span>
+  </div>
+</a>

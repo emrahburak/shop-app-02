@@ -8,7 +8,7 @@ import {faMagnifyingGlass,faBagShopping} from '@fortawesome/free-solid-svg-icons
 })
 export class HeaderComponent {
 
-  faCoffee = faMagnifyingGlass
+  faMagnifyingGlass = faMagnifyingGlass
   faBagShopping = faBagShopping
 
 }

@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<footer class="h-full w-full bg-gray-950 py-20">
+  <p class="text-center text-white font-sans font-medium text-2xl">Menu</p>
+  <div class="h-full grid lg:grid-cols-2 md:grid-rows-2 sm:grid-rows-2 mt-10 ">
+    <div class=" flex flex-col gap-2 w-56">
+      <select name="" id="">
+        <option value="">Turkiye (Usd)</option>
+      </select>
+      <span class="text-white">
+        ©2024 Story
+      </span>
+    </div>
+    <app-flags></app-flags>
+
+
+  </div>
+  <div class="relative">
+    <button *ngIf="showButton" id="stikySettingbtn"
+      class=" fixed left-0 bottom-0  text-white border-2 border-spacing-3 border-blue-500 rounded-full p-2 hover:scale-110 transition-all duration-200 ease-in-out align-bottom  z-50">
+      <fa-icon [icon]="faGear" size="3x"></fa-icon>
+    </button>
+
+  </div>
+  <!-- <button class="text-white fixed z-50">
+      <fa-icon [icon]="faHeadset" size="3x"></fa-icon>
+      <span class="font-sans font-semibold text-xl">Chat</span>
+    </button> -->
+
+</footer>

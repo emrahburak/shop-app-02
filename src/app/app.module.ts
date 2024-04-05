@@ -10,6 +10,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductsComponent } from './products/products.component';
 import { CardComponent } from './card/card.component';
 import { SocialComponent } from './social/social.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { FlagsComponent } from './flags/flags.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { SocialComponent } from './social/social.component';
     HomeComponent,
     ProductsComponent,
     CardComponent,
-    SocialComponent
+    SocialComponent,
+    SubscribeComponent,
+    FlagsComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

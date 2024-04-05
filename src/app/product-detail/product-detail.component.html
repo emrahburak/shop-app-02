@@ -1,0 +1,46 @@
+<section class="max-w-screen-xl border border-black mx-auto">
+  <div class="grid grid-cols-2 h-1/5 ">
+    <div class="flex items-center justify-center">
+      <img class="h-3/4 " src="{{product?.image}}" alt="">
+    </div>
+    <div class="pt-8 w-2/3">
+      <p class="font-sans font-black text-3xl text-wrap uppercase w-10/12">
+        {{product?.name}}
+      </p>
+      <p class="font-sans font-black text-3xl text-wrap uppercase">{{category?.name}}</p>
+      <span>{{product?.price | currency}}</span>
+      <form action="">
+        <fieldset>
+          <label for="">Size</label>
+          <div class="flex gap-8 mt-2 mb-2">
+            <input type="radio" name="size" id="small" class="appearance-none hidden">
+            <label for="small" class="py-2 px-4 hover:border hover:border-black cursor-pointer ">S</label>
+            <input type="radio" name="size" id="medium" class="appearance-none hidden">
+            <label for="medium" class="py-2 px-4 hover:border hover:border-black cursor-pointer">M</label>
+            <input type="radio" name="size" id="large" class="appearance-none hidden">
+            <label for="large" class="py-2 px-4 hover:border hover:border-black cursor-pointer">L</label>
+            <input type="radio" name="size" id="xlarge" class="appearance-none hidden">
+            <label for="xlarge" class="py-2 px-4 hover:border hover:border-black cursor-pointer">XL</label>
+            <input type="radio" name="size" id="xxlarge" class="appearance-none hidden">
+            <label for="xxlarge" class="py-2 px-4 hover:border hover:border-black cursor-pointer">2XL</label>
+          </div>
+        </fieldset>
+        <div class="grid grid-rows-2">
+          <label for="qty">QTY</label>
+          <span>
+            <button type="button" (click)="decreaseQty()">
+              <fa-icon [icon]="faMinus" size="1x"></fa-icon>
+            </button>
+            <input type="number" name="qty" id="" value="{{product?.quantity}}"
+              class="appearance-none focus:outline-none w-12 text-center py-2 px-4">
+            <button type="button" (click)="increaseQty()">
+              <fa-icon [icon]="faPlus" size="1x"></fa-icon>
+            </button>
+          </span>
+        </div>
+        <button type="button" class="uppercase py-2 px-6 border-2 border-black w-full text-black font-sans hover:bg-black hover:text-white">Add to cart</button>
+      </form>
+    </div>
+  </div>
+
+</section>

@@ -1,31 +1,43 @@
-<section class="max-w-screen-xl border border-black mx-auto">
-  <div class="grid grid-cols-2 h-1/5 ">
+<section class="max-w-screen-xl  mx-auto mb-20">
+  <div class="grid lg-grid-cols-2 md:grid-cols-2 sm:grid-cols-1 h-1/5 ">
     <div class="flex items-center justify-center">
       <img class="h-3/4 " src="{{product?.image}}" alt="">
     </div>
-    <div class="pt-8 w-2/3">
-      <p class="font-sans font-black text-3xl text-wrap uppercase w-10/12">
+    <div class="pt-20 lg:w-2/3 sm:w-full flex flex-nowrap flex-col items-center">
+      <p class="font-sans font-black text-3xl text-wrap uppercase lg:w-10/12 sm:w-fit mb-4 ">
         {{product?.name}}
       </p>
-      <p class="font-sans font-black text-3xl text-wrap uppercase">{{category?.name}}</p>
-      <span>{{product?.price | currency}}</span>
+      <p class="font-sans font-black text-3xl text-wrap uppercase mb-4">{{category?.name}}</p>
+      <span class="font-sans font-semibold text-xl mb-8">{{product?.price | currency}}</span>
       <form action="">
         <fieldset>
           <label for="">Size</label>
-          <div class="flex gap-8 mt-2 mb-2">
-            <input type="radio" name="size" id="small" class="appearance-none hidden">
-            <label for="small" class="py-2 px-4 hover:border hover:border-black cursor-pointer ">S</label>
-            <input type="radio" name="size" id="medium" class="appearance-none hidden">
-            <label for="medium" class="py-2 px-4 hover:border hover:border-black cursor-pointer">M</label>
-            <input type="radio" name="size" id="large" class="appearance-none hidden">
-            <label for="large" class="py-2 px-4 hover:border hover:border-black cursor-pointer">L</label>
-            <input type="radio" name="size" id="xlarge" class="appearance-none hidden">
-            <label for="xlarge" class="py-2 px-4 hover:border hover:border-black cursor-pointer">XL</label>
-            <input type="radio" name="size" id="xxlarge" class="appearance-none hidden">
-            <label for="xxlarge" class="py-2 px-4 hover:border hover:border-black cursor-pointer">2XL</label>
-          </div>
+          <ng-container *ngIf="category && category.name !== 'glove' else gloveSize">
+            <div class="flex gap-8 mt-2 mb-8">
+              <input type="radio" name="size" id="small" class="appearance-none hidden" checked>
+              <label for="small" class="py-2 px-4 hover:border hover:border-black cursor-pointer ">S</label>
+              <input type="radio" name="size" id="medium" class="appearance-none hidden">
+              <label for="medium" class="py-2 px-4 hover:border hover:border-black cursor-pointer">M</label>
+              <input type="radio" name="size" id="large" class="appearance-none hidden">
+              <label for="large" class="py-2 px-4 hover:border hover:border-black cursor-pointer">L</label>
+              <input type="radio" name="size" id="xlarge" class="appearance-none hidden">
+              <label for="xlarge" class="py-2 px-4 hover:border hover:border-black cursor-pointer">XL</label>
+              <input type="radio" name="size" id="xxlarge" class="appearance-none hidden">
+              <label for="xxlarge" class="py-2 px-4 hover:border hover:border-black cursor-pointer">2XL</label>
+            </div>
+          </ng-container>
+          <ng-template #gloveSize>
+            <div class="flex gap-8 mt-2 mb-8">
+              <input type="radio" name="size" id="small" class="appearance-none hidden" checked>
+              <label for="small" class="py-2 px-4 hover:border hover:border-black cursor-pointer ">120Z</label>
+              <input type="radio" name="size" id="medium" class="appearance-none hidden">
+              <label for="medium" class="py-2 px-4 hover:border hover:border-black cursor-pointer">140Z</label>
+              <input type="radio" name="size" id="large" class="appearance-none hidden">
+              <label for="large" class="py-2 px-4 hover:border hover:border-black cursor-pointer">160Z</label>
+            </div>
+          </ng-template>
         </fieldset>
-        <div class="grid grid-rows-2">
+        <div class="grid grid-rows-2 mb-8">
           <label for="qty">QTY</label>
           <span>
             <button type="button" (click)="decreaseQty()">
@@ -38,9 +50,20 @@
             </button>
           </span>
         </div>
-        <button type="button" class="uppercase py-2 px-6 border-2 border-black w-full text-black font-sans hover:bg-black hover:text-white">Add to cart</button>
+        <button type="button"
+          class="uppercase py-3 px-6 border-2 border-black w-full text-black font-sans hover:bg-black hover:text-white">Add
+          to cart</button>
       </form>
     </div>
   </div>
+
+
+  <p class="font-normal text-pretty text-lg mt-20">{{product?.description}}</p>
+
+
+
+  <section class="mb-20">
+    <app-subscribe></app-subscribe>
+  </section>
 
 </section>

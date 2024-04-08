@@ -1,4 +1,4 @@
-<a routerLink="product/{{product.id}}" *ngIf="product" class="flex flex-col flex-nowrap  gap-6 w-80 mt-20 overflow-hidden  pb-10">
+<a routerLink="/product/{{product.id}}" *ngIf="product" class="flex flex-col flex-nowrap  gap-6 w-80 mt-20 overflow-hidden  pb-10" (click)="handleClick(product)">
 
   <img class="w-56 h-48 transition-all duration-200 ease-in-out  hover:scale-105 mx-auto" src="{{product.image}}"
     alt="{{product.name}}">

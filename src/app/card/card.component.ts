@@ -17,4 +17,8 @@ export class CardComponent {
   constructor(private router:Router){
 
   }
+
+  handleClick(product:Product):void {
+    console.log("clicked", product)
+  }
 }

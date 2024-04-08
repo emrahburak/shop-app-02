@@ -6,4 +6,5 @@ export interface Product {
     color: string,
     quantity:number,
     image:string
+    description:string
 }

@@ -1,9 +1,56 @@
-
-<div class="  flex  gap-6 justify-center" *ngIf="display === 'carousel'">
-    <app-card *ngFor="let product of gloves.slice(0,4)" [product]="product"></app-card>
+<!-- <div class="  flex  gap-6 justify-center" *ngIf="display === 'carousel'">
+  <app-card *ngFor="let product of gloves.slice(0,4)" [product]="product"></app-card>
 </div>
 
 <div class="grid grid-cols-4 gap-4 max-w-screen-xl mx-auto" *ngIf="display === 'grid'">
-    <app-card *ngFor="let product of shirts" [product]="product"></app-card>
-</div>
+  <app-card *ngFor="let product of shirts" [product]="product"></app-card>
+</div> -->
 
+
+
+<!-- <div [ngClass]="{
+  'grid grid-cols-4 gap-4 max-w-screen-xl mx-auto': display === 'grid',
+  'flex gap-6 justify-center': display === 'carousel'
+}">
+  <ng-container *ngIf="display === 'carousel' && isSlice && category === gloveStr">
+    <app-card  *ngFor="let product of gloves.slice(0, 4)" [product]="product"></app-card>
+  </ng-container>
+  <ng-container *ngIf="display === 'carousel' && !isSlice && category === gloveStr">
+    <app-card *ngFor="let product of gloves" [product]="product"></app-card>
+  </ng-container>
+  <ng-container *ngIf="display === 'carousel' && isSlice && category === shirtStr">
+    <app-card *ngFor="let product of shirts.slice(0,4)" [product]="product"></app-card>
+  </ng-container>
+  <ng-container *ngIf="display === 'carousel' && !isSlice && category === shirtStr">
+    <app-card *ngFor="let product of shirts" [product]="product"></app-card>
+  </ng-container>
+  <ng-container *ngIf="display !== 'carousel'">
+    <app-card *ngFor="let product of shirts" [product]="product"></app-card>
+  </ng-container>
+</div> -->
+
+
+<div [ngClass]="{
+  'grid grid-cols-4 gap-4 max-w-screen-xl mx-auto': display === 'grid',
+  'flex gap-6 justify-center': display === 'carousel'
+}">
+
+  <ng-container *ngIf="category === 'glove' && isSlice">
+    <app-card *ngFor="let product of getFilteredProducts('glove', 4)" [product]="product"></app-card>
+  </ng-container>
+
+  <ng-container *ngIf="category === 'glove' && !isSlice">
+    <app-card *ngFor="let product of getFilteredProducts('glove')" [product]="product"></app-card>
+  </ng-container>
+  <ng-container *ngIf="category === 'shirt' && isSlice">
+    <app-card *ngFor="let product of getFilteredProducts('shirt',4)" [product]="product"></app-card>
+  </ng-container>
+
+  <ng-container *ngIf="category === 'shirt' && !isSlice">
+    <app-card *ngFor="let product of getFilteredProducts('shirt')" [product]="product"></app-card>
+  </ng-container>
+
+  <ng-container *ngIf="display !== 'carousel'">
+    <app-card *ngFor="let product of getFilteredProducts('shirt')" [product]="product"></app-card>
+  </ng-container>
+</div>

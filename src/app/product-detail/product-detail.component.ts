@@ -17,15 +17,18 @@ export class ProductDetailComponent implements OnInit {
   faPlus = faPlus
   product: Product | undefined
   category: Category | undefined
+  products: Product[] | undefined
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     let routerParams = this.route.snapshot.paramMap
     let productId = Number(routerParams.get('id'))
+    console.log("active route product id", productId)
     this.productService.getProductById(productId).subscribe((product: Product) => this.product = product)
     let category_id = Number(this.product?.category_id)
     this.categoryService.getCategoryById(category_id).subscribe((category: Category) => this.category = category)
+    this.productService.getProductsByCategory(category_id).subscribe((products:Product[])=> this.products = products)
   }
 
   decreaseQty() {

@@ -13,6 +13,8 @@ import { SocialComponent } from './social/social.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { FlagsComponent } from './flags/flags.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     SocialComponent,
     SubscribeComponent,
     FlagsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SidebarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

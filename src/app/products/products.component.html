@@ -46,11 +46,15 @@
     <app-card *ngFor="let product of getFilteredProducts('shirt',4)" [product]="product"></app-card>
   </ng-container>
 
-  <ng-container *ngIf="category === 'shirt' && !isSlice">
+  <ng-container *ngIf="category === 'shirt' && display === 'carousel' && !isSlice">
     <app-card *ngFor="let product of getFilteredProducts('shirt')" [product]="product"></app-card>
   </ng-container>
 
-  <ng-container *ngIf="display !== 'carousel'">
+  <ng-container *ngIf="category === 'all'&& display !== 'carousel' && !isSlice">
+    <app-card *ngFor="let product of getFilteredProducts('all')" [product]="product"></app-card>
+  </ng-container>
+
+  <ng-container *ngIf="display !== 'carousel' && category === 'shirt'">
     <app-card *ngFor="let product of getFilteredProducts('shirt')" [product]="product"></app-card>
   </ng-container>
 </div>

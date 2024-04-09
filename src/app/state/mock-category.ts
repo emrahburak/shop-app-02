@@ -8,6 +8,10 @@ export const Categories:Category[] = [
     {
         id:2,
         name:"shirt"
+    },
+    {
+        id:3,
+        name:"all"
     }
 
 ]

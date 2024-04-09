@@ -18,14 +18,23 @@ export class ProductsComponent implements OnInit {
   shirts: Product[] = []
   glove: Category | undefined
   shirt: Category | undefined
+  all: Category | undefined
+  products: Product[] = []
   gloveStr = "glove"
   shirtStr = "shirt"
+  allStr = "all"
   related = ""
 
   constructor(private productService: ProductService, private categoryService: CategoryService) {
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategoryByName(this.allStr.toLowerCase().trim())
+      .subscribe((category: Category) => {
+        this.all = category
+      })
+
+
     this.categoryService.getCategoryByName(this.gloveStr.toLowerCase().trim())
       .subscribe((category: Category) => {
         this.glove = category;
@@ -34,28 +43,36 @@ export class ProductsComponent implements OnInit {
     this.categoryService.getCategoryByName(this.shirtStr.toLowerCase().trim())
       .subscribe((category: Category) => this.shirt = category)
 
+
+    if (this.all && typeof this.all.id === 'number') {
+      this.productService.getProducts().subscribe(products => { this.products = products })
+    }
+
+
     if (this.glove && typeof this.glove.id === 'number') {
-      this.productService.getProductsByCategory(this.glove?.id).subscribe(products => { this.gloves = products; this.gloves = products })
+      this.productService.getProductsByCategory(this.glove?.id).subscribe(products => { this.gloves = products })
     }
 
     if (this.shirt && typeof this.shirt.id === 'number') {
-      this.productService.getProductsByCategory(this.shirt?.id).subscribe(products => { this.shirts = products; this.shirts = products })
+      this.productService.getProductsByCategory(this.shirt?.id).subscribe(products => { this.shirts = products })
     }
 
 
   }
 
 
-    getFilteredProducts(category: string, limit ?: number): Product[] {
-      if (category === 'glove') {
-        return this.gloves.slice(0, limit || this.gloves.length);
-      } else if (category === 'shirt') {
-        return this.shirts.slice(0, limit || this.shirts.length);
-      } else {
-        // Handle cases where category is not 'gloveStr' or 'shirtStr'
-        return []; // Or return a default product list
-      }
+  getFilteredProducts(category: string, limit?: number): Product[] {
+    if (category === 'glove') {
+      return this.gloves.slice(0, limit || this.gloves.length);
+    } else if (category === 'shirt') {
+      return this.shirts.slice(0, limit || this.shirts.length);
+    } else if (category === 'all') {
+      return this.products;
+    } else {
+      // Handle cases where category is not 'gloveStr' or 'shirtStr'
+      return []; // Or return a default product list
     }
+  }
 
 
 }

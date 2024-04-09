@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,6 +16,10 @@ import { FlagsComponent } from './flags/flags.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContactComponent } from './contact/contact.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
+
 
 @NgModule({
   declarations: [
@@ -29,12 +34,17 @@ import { ContactComponent } from './contact/contact.component';
     FlagsComponent,
     ProductDetailComponent,
     SidebarComponent,
-    ContactComponent
+    ContactComponent,
+    CollectionsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      CartService, { dataEncapsulation: false }
+    )
   ],
   providers: [
     provideClientHydration()

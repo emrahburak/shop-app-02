@@ -1,41 +1,106 @@
-
 .popup-container .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(3, 1, 1, 0.7);
-    z-index: 50;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 200ms ease-in-out;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 1, 1, 0.7);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+}
 
-  .popup-container > input {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-  }
+.popup-container > input {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.popup-container > input:checked + .popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.display-n {
+  display: none;
+}
+.display-i {
+  display: inline;
+}
+/* #back-btn + label > span + span {
+  display: none;
+}
+
+#back-btn:checked + label > span {
+  display: none;
+}
+
+#back-btn:checked + label > span + span {
+  display: inline;
+}
+
+#back-btn + label > span + span + span {
+  display: inline;
+}
+
+#back-btn:checked + label > span + span + span {
+  display: none;
+}
+
+#back-btn + label > span + span + span + span {
+  display: none;
+}
+
+#back-btn:checked + label > span + span + span + span {
+  display: inline;
+}
+
+#back-btn + label + ul + ul {
+  display: none;
+}
+
+#back-btn:checked + label + ul {
+  display: none;
+}
+
+#back-btn:checked + label + ul + ul {
+  display: inline;
+} */
 
 
-  .popup-container > input:checked + .popup {
-    opacity: 1;
-    visibility: visible;
-  }
 
-  .popup-container .popup .sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: black;
-    min-width: 300px;
-    height: 100%;
-    box-sizing: border-box;
-    z-index: 100;
-  
-  }
+/* #back-btn + label > span + span + span + span {
+  display: none;
+}
 
-  .close-btn {
-    transform: translate(-50%, -50%);
-  }
+#back-btn:checked + span {
+  display: none;
+}
+
+#back-btn:checked + span + span {
+  display: inline;
+}
+
+#back-btn:checked + span + span + span {
+  display: none;
+}
+
+#back-btn:checked + span + span + span + span {
+  display: inline;
+} */
+
+.popup-container .popup .sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  min-width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.close-btn {
+  transform: translate(-50%, -50%);
+}

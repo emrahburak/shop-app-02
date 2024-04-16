@@ -18,7 +18,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContactComponent } from './contact/contact.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { CartComponent } from './cart/cart.component';
-import { CartService } from './cart.service';
+import { CartService } from './services/cart.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { CartService } from './cart.service';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      CartService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false }
     )
   ],
   providers: [

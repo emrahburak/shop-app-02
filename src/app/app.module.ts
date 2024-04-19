@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -43,6 +44,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )

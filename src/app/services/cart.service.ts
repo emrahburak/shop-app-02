@@ -29,11 +29,11 @@ export class CartService {
     };
   }
 
-  getCartItems(): Observable<Cart[]> {
-    return this.http.get<Cart[]>(this.cartItemsUrl)
+  getCartItems(): Observable<Cart> {
+    return this.http.get<Cart>(this.cartItemsUrl)
       .pipe(
         tap(_ => console.log("fetched cartItems")),
-        catchError(this.handleError<Cart[]>('getCartItems', []))
+        catchError(this.handleError<Cart>('getCartItems', ))
       )
   }
 

@@ -11,7 +11,24 @@ export class InMemoryDataService implements InMemoryDataService {
   constructor() { }
 
   createDb() {
-    const cartItems: Cart[] = new Array()
+
+    const cartItems: Cart =
+    {
+      id: 12,
+      products: [
+        {
+          id: 1,
+          category_id: 1,
+          name: "SportZone Pro Hook Series",
+          price: 99,
+          color: 'Red',
+          image: '../../assets/images/product-06.jpg',
+          quantity: 2,
+          description: "This product is  is designed for optimal comfort and performance. It allows for unrestricted movement and keeps you cool during intense workouts. Perfect for athletes and fitness enthusiasts looking to elevate their workout attire"
+        }
+      ]
+    }
+
     return { cartItems }
   }
 

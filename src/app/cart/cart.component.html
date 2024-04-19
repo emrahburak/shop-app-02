@@ -4,5 +4,17 @@
     <p class="uppercase font-sans font-extrabold text-5xl text-white">Your Cart</p>
   </div>
   <div class="max-w-screen-sm mx-auto">
+    <ng-container *ngIf="cartItems?.products?.length !== 0; else emptyCart">
+      <!-- Sepet boşsa buradaki içerik render edilecek -->
+      test
+    </ng-container>
+    <ng-template #emptyCart>
+      <p class="uppercase font-sans font-extrabold text-3xl text-black mb-10">Your cart currently empty</p>
+      <a href="" class="text-red-500 font-sans font-light">Continue shopping</a>
+    </ng-template>
+    
+
+
   </div>
+  <app-subscribe></app-subscribe>
 </section>

@@ -5,8 +5,25 @@
   </div>
   <div class="max-w-screen-sm mx-auto">
     <ng-container *ngIf="cartItems?.products?.length !== 0; else emptyCart">
-      <!-- Sepet boşsa buradaki içerik render edilecek -->
-      test
+      <table>
+        <thead class="mb-4">
+          <tr>
+            <th class="w-full max-w-64 text-start">Item</th>
+            <th class="">Price</th>
+            <th class="">Quantity</th>
+            <th class="">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of cartItems?.products" >
+            <td class="flex-grow ">{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price * product.quantity}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
     </ng-container>
     <ng-template #emptyCart>
       <p class="uppercase font-sans font-extrabold text-3xl text-black mb-10">Your cart currently empty</p>

@@ -12,7 +12,6 @@ import { Product } from '../model/product';
 export class CartComponent implements OnInit {
 
   cartItems: Cart | undefined
-  products: Product[] | undefined
   total = 0
 
   constructor(private cartService: CartService) { }
